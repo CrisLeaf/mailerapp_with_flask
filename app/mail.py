@@ -29,9 +29,8 @@ def create():
 		email = request.form.get("email")
 		subject = request.form.get("subject")
 		content = request.form.get("content")
-		print(email, subject, content)
-		errors = []
 		
+		errors = []
 		if not email:
 			errors.append("Email es obligatorio")
 		if not subject:
