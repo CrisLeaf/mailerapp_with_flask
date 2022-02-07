@@ -1,4 +1,4 @@
-import mysql.connector
+import psycopg2
 import click
 from flask import current_app, g
 from flask.cli import with_appcontext
@@ -7,7 +7,7 @@ from .schema import instructions
 
 def get_db():
 	if "db" not in g:
-		g.db = mysql.connector.connect(
+		g.db = psycopg2.connect(
 			host=current_app.config["DATABASE_HOST"],
 			user=current_app.config["DATABASE_USER"],
 			password=current_app.config["DATABASE_PASSWORD"],
